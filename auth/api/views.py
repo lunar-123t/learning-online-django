@@ -1,11 +1,19 @@
+from django.contrib.auth.hashers import make_password
+from django.http import JsonResponse
+from rest_framework import permissions, status
+from rest_framework.generics import CreateAPIView
+from django.contrib.auth import get_user_model # If used custom user model
+from rest_framework.views import APIView
 
-from rest_framework.permissions import AllowAny
-
-from user.models import User
-from .serializers import RegisterSerializer
-from rest_framework import generics
+from .serializers import UserSerializer
 
 
-class RegisterView(generics.CreateAPIView):
-    queryset = User.objects.all()
-    serializer_class = RegisterSerializer
+class CreateUserView(CreateAPIView):
+
+    model = get_user_model()
+    permission_classes = [
+        permissions.AllowAny # Or anon users can't register
+    ]
+    serializer_class = UserSerializer
+
+
