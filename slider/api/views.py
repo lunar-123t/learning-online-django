@@ -5,4 +5,4 @@ from slider.models import Slider
 
 class SliderApiView(ListAPIView):
     serializer_class = SliderSerializer
-    queryset = Slider.objects.all()
+    queryset = Slider.objects.all().order_by('-order')
