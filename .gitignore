@@ -11,6 +11,8 @@ user/__pycache__
 db.sqlite3
 **/venv
 **/env
+/env
+.\env
 **/virtualenv
 api/staticfiles/*
 api/staticfiles/*
