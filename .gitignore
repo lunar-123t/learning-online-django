@@ -7,6 +7,7 @@
 **/.env.staging
 **/__pycache__
 auth/__pycache__
+auth/api/__pycache__
 user/__pycache__
 db.sqlite3
 **/venv
