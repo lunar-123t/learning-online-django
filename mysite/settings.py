@@ -125,3 +125,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'user.User'
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://2cce-2402-800-6235-87e4-48aa-e5f9-5cff-12f2.ap.ngrok.io']
