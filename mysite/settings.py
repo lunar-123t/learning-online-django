@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+from datetime import timedelta
+
 import environ
 import os
 env = environ.Env(
@@ -48,6 +50,8 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     'slider.apps.SliderConfig',
     'khoahoc.apps.KhoahocConfig',
+
+
 ]
 
 MIDDLEWARE = [
@@ -140,5 +144,13 @@ CSRF_TRUSTED_ORIGINS = [env('CSRF_TRUSTED_ORIGINS')]
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=365),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=365),
 }
