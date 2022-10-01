@@ -1,0 +1,1 @@
+web: gunicorn appkhoahoc.wsgi --log-file -
