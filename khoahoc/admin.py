@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from khoahoc.models import LevelKhoaHoc, MonHoc, KhoaHoc
+from khoahoc.models import LevelKhoaHoc, MonHoc, KhoaHoc, BaiHoc
 
 
 @admin.register(KhoaHoc)
@@ -16,3 +16,7 @@ class LevelKhoahocAdmin(admin.ModelAdmin):
 @admin.register(MonHoc)
 class MonHocAdmin(admin.ModelAdmin):
     list_display = ("ten_mon_hoc","level")
+
+@admin.register(BaiHoc)
+class BaiHocAdmin(admin.ModelAdmin):
+    list_display = ("ten_bai",)
