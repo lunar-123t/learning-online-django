@@ -3,8 +3,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from khoahoc.api.serializers import KhoahocSerializer, LevelSerializer, MonhocSerializer
-from khoahoc.models import KhoaHoc, LevelKhoaHoc, MonHoc
+from khoahoc.api.serializers import KhoahocSerializer, LevelSerializer, MonhocSerializer, BaihocSerializer
+from khoahoc.models import KhoaHoc, LevelKhoaHoc, MonHoc, BaiHoc
 
 
 #
@@ -13,6 +13,10 @@ class KhoahocApiView(ListAPIView):
     serializer_class = KhoahocSerializer
     queryset = KhoaHoc.objects.all()
 
+class BaihocApiView(ListAPIView):
+    permission_classes = [IsAuthenticated]
+    serializer_class = BaihocSerializer
+    queryset = BaiHoc.objects.all()
 
 class Listlevel(ListAPIView):
     serializer_class = LevelSerializer

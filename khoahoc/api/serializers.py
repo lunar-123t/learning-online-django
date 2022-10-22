@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from rest_framework.response import Response
 
-from khoahoc.models import KhoaHoc, LevelKhoaHoc, MonHoc
+from khoahoc.models import KhoaHoc, LevelKhoaHoc, MonHoc, BaiHoc
 
 
 class KhoahocSerializer(serializers.ModelSerializer):
@@ -15,6 +15,10 @@ class MonhocSerializer(serializers.ModelSerializer):
         model = MonHoc
         fields = "__all__"
 
+class BaihocSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BaiHoc
+        fields = "__all__"
 
 class LevelSerializer(serializers.ModelSerializer):
     mon_hoc = serializers.SerializerMethodField()
