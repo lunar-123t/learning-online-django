@@ -140,7 +140,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'user.User'
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = 'CSRF_TRUSTED_ORIGINS'
+CSRF_TRUSTED_ORIGINS = ['https://learningapp2.herokuapp.com/']
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
