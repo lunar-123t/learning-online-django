@@ -9,7 +9,6 @@
 auth/__pycache__
 auth/api/__pycache__
 user/__pycache__
-db.sqlite3
 **/venv
 **/env
 /env
