@@ -13,6 +13,7 @@ from datetime import timedelta
 
 import environ
 import os
+
 env = environ.Env(
     DEBUG=False
 )
@@ -32,9 +33,6 @@ SECRET_KEY = 'django-insecure-kukz&cott8b)_e3iywj2%kz&de49*%3yoss7ao44k2d5j=#h4h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-
-
-
 ALLOWED_HOSTS = ['herokuappname.herokuapp.com']
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -53,7 +51,6 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     'slider.apps.SliderConfig',
     'khoahoc.apps.KhoahocConfig',
-
 
 ]
 
@@ -92,19 +89,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#
-#     }
-# }
-
-
+DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    #
+    # }
+}
 
 
 # Password validation
@@ -125,8 +119,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -137,7 +129,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -176,5 +167,6 @@ STATICFILES_DIRS = (
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 import dj_database_url
-prod_db  =  dj_database_url.config(conn_max_age=500)
+
+prod_db = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
