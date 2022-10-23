@@ -21,5 +21,5 @@ class BaiHoc(models.Model):
     ten_bai = models.CharField(max_length=50)
     url_anh = models.CharField(max_length=100)
     thoi_luong = models.CharField(max_length=100)
-    video_id = models.IntegerField()
-    oder = models.CharField(max_length=50)
+    video_id = models.CharField(max_length=50)
+    oder = models.IntegerField()

@@ -22,7 +22,8 @@ class Listlevel(ListAPIView):
     serializer_class = LevelSerializer
 
     def get_queryset(self):
-        dataguilen = self.request.data
+        dataguilen = self.request.query_params
+        print(dataguilen)
         return LevelKhoaHoc.objects.filter(khoa_hoc_id=dataguilen['idkhoahoc'])
 
 
@@ -30,7 +31,7 @@ class ListAlllevel(ListAPIView):
     serializer_class = MonhocSerializer
 
     def get_queryset(self):
-        dataguilen = self.request.data
+        dataguilen = self.request.query_params
         return MonHoc.objects.filter(level_id=dataguilen['idlevel'])
 
 #aaaaa
@@ -38,7 +39,7 @@ class SearchList(ListAPIView):
     serializer_class = MonhocSerializer
 
     def get_queryset(self):
-        data = self.request.data
+        data = self.request.query_params
         ten_mon=data.get('ten_mon', "")
         level_id=data.get('level_id', "")
         print(ten_mon)
