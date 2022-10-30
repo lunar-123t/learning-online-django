@@ -15,7 +15,7 @@ class LevelKhoahocAdmin(admin.ModelAdmin):
 
 @admin.register(MonHoc)
 class MonHocAdmin(admin.ModelAdmin):
-    list_display = ("ten_mon_hoc","level")
+    list_display = ("ten_mon_hoc","level","url_anh")
 
 @admin.register(BaiHoc)
 class BaiHocAdmin(admin.ModelAdmin):

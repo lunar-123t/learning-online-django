@@ -23,4 +23,5 @@ urlpatterns = [
     path('login/', include('auth.api.urls')),
     path('slider/', include('slider.api.urls')),
     path('khoahoc/', include('khoahoc.api.urls')),
+    path('chat/', include('chat.api.urls')),
 ]
