@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     'slider.apps.SliderConfig',
     'khoahoc.apps.KhoahocConfig',
+    'chat.apps.ChatConfig',
 
 ]
 
