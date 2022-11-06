@@ -15,7 +15,7 @@ class MessSerializer(serializers.ModelSerializer):
         fields = ('id', 'is_my_messages', 'message_text')
 
 
-class chatcreateserializers(Serializer):
+class ChatCreateserializers(Serializer):
     message_text = serializers.CharField(max_length=200)
     def create(self, validated_data):
         return Chat.objects.create(
