@@ -1,11 +1,8 @@
 import datetime
-from datetime import date
 
-import self as self
-from rest_framework import serializers, request
+from rest_framework import serializers
 from rest_framework.serializers import Serializer
 
-import chat
 from chat.models import Chat
 
 
