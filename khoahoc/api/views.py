@@ -13,10 +13,6 @@ class KhoahocApiView(ListAPIView):
     serializer_class = KhoahocSerializer
     queryset = KhoaHoc.objects.all()
 
-class BaihocApiView(ListAPIView):
-    permission_classes = [IsAuthenticated]
-    serializer_class = BaihocSerializer
-    queryset = BaiHoc.objects.all()
 
 class Listlevel(ListAPIView):
     serializer_class = LevelSerializer
@@ -34,15 +30,24 @@ class ListAlllevel(ListAPIView):
         dataguilen = self.request.query_params
         return MonHoc.objects.filter(level_id=dataguilen['idlevel'])
 
-#aaaaa
+
 class SearchList(ListAPIView):
     serializer_class = MonhocSerializer
 
     def get_queryset(self):
         data = self.request.query_params
-        ten_mon=data.get('ten_mon', "")
-        level_id=data.get('level_id', "")
+        ten_mon = data.get('ten_mon', "")
+        level_id = data.get('level_id', "")
         print(ten_mon)
         print(level_id)
 
-        return MonHoc.objects.filter(ten_mon_hoc__contains=ten_mon,level_id=level_id)
+        return MonHoc.objects.filter(ten_mon_hoc__contains=ten_mon, level_id=level_id)
+
+
+class BaihocApiView(ListAPIView):
+    permission_classes = [IsAuthenticated]
+    serializer_class = BaihocSerializer
+
+    def get_queryset(self):
+        dataguilen = self.request.query_params
+        return BaiHoc.objects.filter(monhoc_id=dataguilen['idmonhoc'])

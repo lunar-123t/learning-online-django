@@ -16,10 +16,11 @@ class MonHoc(models.Model):
     url_anh = models.CharField(max_length=100)
     level = models.ForeignKey(LevelKhoaHoc, on_delete=models.CASCADE)
     def __str__(self):
-        return self.ten_mon_hoc
+        return self.ten_mon_hoc +" "+ str(self.level)
 class BaiHoc(models.Model):
     ten_bai = models.CharField(max_length=50)
     url_anh = models.CharField(max_length=100)
     thoi_luong = models.CharField(max_length=100)
     video_id = models.CharField(max_length=50)
     oder = models.IntegerField()
+    monhoc = models.ForeignKey(MonHoc, on_delete=models.CASCADE, null=True)
