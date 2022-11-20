@@ -2,7 +2,6 @@ import datetime
 
 from rest_framework import serializers
 from rest_framework.serializers import Serializer
-
 from chat.models import Chat
 
 

@@ -35,7 +35,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['herokuappname.herokuapp.com']
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Application definition
 
 INSTALLED_APPS = [
@@ -65,8 +64,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
-
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 
 ]
 
